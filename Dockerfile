@@ -11,6 +11,7 @@ RUN apt-get update -q && \
     apt-get install -y curl bzip2 && \
     useradd -m monero && \
     curl -L https://downloads.getmonero.org/linux64 | tar jx && \
+    mv monero-v*/* . && rmdir monero-v* && \
     apt-get purge -y curl bzip2 && \
     apt-get autoremove --purge -y && \
     rm -rf /var/tmp/* /tmp/* /var/lib/apt/lists/*
